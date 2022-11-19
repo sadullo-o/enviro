@@ -1,0 +1,399 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% trans 'Chemical' %}</title>
+    <link rel="stylesheet" href="{% static 'main/CSS/style.css' %}" />
+
+  </head>
+  <body>
+    <div class="overlay none" id="overlay"></div>
+
+    <!-- Header -->
+    <header>
+      <nav class="flex justify_center">
+        <div class="container justify_center">
+          <div class="burMenu none" id="bur-menu">
+            <button class="close" onclick="closeNav()">
+              <img src="{% static 'main/images/close.png' %}' %}" alt="" />
+            </button>
+            <ul class="ul">
+              <li><a href="#about">{% trans "About us" %}</a></li>
+              <li><a href="{% url 'product' %}">{% trans "Products" %}</a></li>
+              <li><a href="{% url 'media' %}" target="_self">{% trans  "Media" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact us" %}</a></li>
+            </ul>
+          </div>
+          <div class="navbar">
+            <div class="navbarText">
+              <div class="logo">
+                <a href="{% url 'home' %}">
+                  <img src="{% static 'main/images/logo.png' %}" alt="logo" />
+                </a>
+              </div>
+              <div class="burgerMenu">
+                <img
+                  src="{% static 'main/images/icons/burger_menu.png' %}"
+                  alt="menu"
+                  class="burger_menu"
+                  onclick="openNav()"
+                />
+              </div>
+              <div class="menu">
+                <ul class="flex justify_center align_center">
+                  <li><a href="#about">{% trans "About us" %}</a></li>
+              <li><a href="{% url 'product' %}">{% trans "Products" %}</a></li>
+              <li><a href="{% url 'media' %}" target="_self">{% trans  "Media" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact us" %}</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="lang">
+              <img src="{% static 'main/images/icons/Globe.png' %}" alt="Globe" />
+              <div class="dropdown">
+                <div class="drop_btn flex align_center justify_center">
+                  {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+                  <button class="dropbtn_item" onclick="openDrop()">{{LANGUAGE_CODE}}</button>
+                  <img
+                    src="{% static 'main/images/icons/fi-rr-angle-small-down.png' %}"
+                    alt="Down"
+                    onclick="openDrop()"
+                  />
+                </div>
+                <div class="dropdown-content none" id="dropdown-content">
+                  {% for lang in languages %}
+
+              <a class="dropdown-item" href="/{{ lang.code }}/">
+                  {{ lang.name_local }}
+              </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="banner flex justify_center">
+        <div class="container flex">
+          <div class="banner_items flex justify_between align_center">
+            <div class="bannerItems_anim" id="banner-animate">
+             {% for item in mains %}
+              <div class="products_change flex justify_evenly align_center">
+                <h1 class="prodtitle">
+                  {{item.title}}
+                </h1>
+                <p>
+                  {{item.body}}
+                </p>
+
+                <div class="products_btn flex align_center justify_between">
+                  <button class="btn btn_products">
+                    <a href="{{item.link}}">{% trans "Products" %}</a>
+                  </button>
+                  <div class="slider_btn">
+                    <button class="btn left_arr">
+                      <img src="{% static 'main/images/icons/allow_right.png' %}" alt="<" />
+                    </button>
+                    <button class="btn right_arr" onclick="rightSlider()">
+                      <img src="{% static 'main/images/icons/allow_right.png' %}" alt=">" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+             {% endfor %}
+            </div>
+          </div>
+          <img src="{% static 'main/images/header_person.png' %}" alt="Person" class="bimgper" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Why Us -->
+    <section>
+      <div class="why_us">
+        <h1 class="why_title"><span class="blue">{% trans 'Why'%}</span> {% trans 'us?' %}</h1>
+        <div class="why_us_contents flex justify_center align_center">
+          <div class="why_us_content1 flex justify_center align_center">
+            <div class="container justify_between">
+              <div class="content long_content">
+                <div class="con_img">
+                  <div class="con_img_bg flex justify_center align_center">
+                    <img src="{{whyus.0.image.url}}" alt="yorliq" />
+                  </div>
+                </div>
+                <div class="con_titles flex justify_center">
+                  <h1>{{whyus.0.title}}</h1>
+                  <p>
+                      {{whyus.0.body}}
+                  </p>
+                </div>
+              </div>
+              <div class="content short_content">
+                <div class="con_img">
+                  <div class="con_img_bg flex justify_center align_center">
+                    <img src="{{whyus.1.image.url}}" alt="ok" />
+                  </div>
+                </div>
+                <div class="con_titles">
+                  <h1>{{whyus.1.title}}</h1>
+                  <p>
+                    {{whyus.1.title}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="why_us_content2 flex justify_center align_center">
+            <div class="container justify_between">
+              <div class="content short_content">
+                <div class="con_img">
+                  <div class="con_img_bg flex justify_center align_center">
+                    <img src="{{whyus.2.image.url}}" alt="dollor" />
+                  </div>
+                </div>
+                <div class="con_titles">
+                  <h1>{{whyus.2.title}}</h1>
+                  <p>
+                    {{whyus.2.body}}
+                  </p>
+                </div>
+              </div>
+              <div class="content long_content">
+                <div class="con_img">
+                  <div class="con_img_bg flex justify_center align_center">
+                    <img src="{{whyus.3.image.url}}" alt="lampa" />
+                  </div>
+                </div>
+                <div class="con_titles">
+                  <h1>{{whyus.3.title}}</h1>
+                  <p>
+                      {{whyus.3.body}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section>
+      <div class="products" id="products">
+        <h1 class="pro_title">{% trans 'Products' %}</h1>
+        <div class="products_contents flex justify_center align_center">
+          <div class="container justify_between align_center">
+           {% for p in products %}
+            <div class="pro_con">
+              <img src="{{p.icon.url}}" alt="Products" />
+              <h1>{{p.title}}</h1>
+              <p>
+                {{p.body}}
+              </p>
+              <button class="btn_light">
+                <a href="{% url 'building' p.id %}">View more</a>
+              </button>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section>
+      <div class="about_us" id="about">
+        <div class="container">
+          <div class="about_contents">
+            <div class="about_content1">
+              <img src="{% static 'main/images/about_man.png' %}" alt="about us" />
+            </div>
+
+            <div class="about_content2">
+              <h1>{{aboutus.0.title}}</h1>
+              <p>
+                {{aboutus.0.body}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section>
+      <div class="clients">
+        <div class="container">
+          <div class="all_csection">
+            <h1>{% trans 'Clients' %}</h1>
+            <div
+              class="clients_logos flex flex_column justify_center align_center"
+            >
+              <div class="slider_btn">
+                <button class="btn left_arr clients_btn_left">
+                  <img src="{% static 'main/images/icons/allow_right.png' %}" alt="" />
+                </button>
+                <button class="btn right_arr clients_btn_right">
+                  <img src="{% static 'main/images/icons/allow_right.png' %}" alt="" />
+                </button>
+              </div>
+              <div class="client_logos_img">
+
+               {% for image in clients %}
+                <img
+                  src="{{image.image.url}}"
+                  alt="logoIPsum"
+                  class="block"
+                />
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Address -->
+    <section>
+      <div class="address flex align_center justify_center" id="contact">
+        <div class="container" style="justify-content: flex-end">
+          <div class="address_map">
+            <img src="{% static 'main/images/mapImg.png' %}" alt="map" class="addmap" />
+            <div class="location">
+              <img src="{% static 'main/images/location.png' %}" alt="location" />
+              <img src="{% static 'main/images/logo.png' %}" alt="address" />
+            </div>
+            <div class="address_contacts">
+              <div class="contents_data">
+                <div class="top_data">
+                  <img src="{% static 'main/images/icons/fi-rr-phone-call.png' %}" alt="phone" />
+                  <p>{% trans "Phone number" %}</p>
+                </div>
+                <h1>{{sitecontact.0.number}}</h1>
+              </div>
+              <div class="contents_data">
+                <div class="top_data">
+                  <img src="{% static 'main/images/icons/mail.png' %}" alt="email" />
+                  <p>{% trans "E-mail" %}</p>
+                </div>
+                <h1>{{sitecontact.0.email}}</h1>
+              </div>
+              <div class="contents_data">
+                <div class="top_data">
+                  <img src="{% static 'main/images/icons/address.png' %}" alt="Adress" />
+                  <p>{% trans "Adress" %}</p>
+                </div>
+                <h1>{{sitecontact.0.address}}</h1>
+              </div>
+            </div>
+          </div>
+          <div class="form_cons">
+            <div class="form_section">
+              <h1>{% trans 'Contact us' %}</h1>
+              <form class="form" method="post">
+               {% csrf_token %}
+                <div class="name">
+                <label for="name">{% trans 'Name' %}</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="{% trans 'Ismingizni kiriting!' %}"
+                />
+              </div>
+              <div class="number">
+                <label for="number">{% trans 'Phone number' %}</label>
+                <input
+                  type="number"
+                  id="number"
+                  name="number"
+                  placeholder="{% trans 'Telefon raqamingizni kiriting'%}"
+                />
+              </div>
+              <div class="email">
+                <label for="email">{% trans 'Email' %}</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="{% trans 'Email pochtani kiriting' %}"
+                />
+              </div>
+                <button class="btn send" id="send">{% trans "Send" %}</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer flex justify_center align_center">
+        <h1>{% trans "All rights reserved enviro chemicals" %}</h1>
+        <div class="container justify_flexEnd">
+          <div class="socials flex align_center">
+            <h2>{% trans "Biz ijtimoiy tarmoqlarda" %}</h2>
+            <ul class="flex">
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/facebook.png' %}" alt="facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/instagramm.png' %}" alt="instagramm"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/telegram.png' %}" alt="telegram"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/telegram.png' %}" alt="yanatelegram"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="order_now none" id="order-now">
+      <div class="overlay"></div>
+      <div class="order_section">
+        <h1>{% trans "Order now" %}</h1>
+        <button class="close" id="close">
+          <img src="{% static 'main/images/close.png' %}" alt="x" />
+        </button>
+
+      </div>
+    </div>
+
+    <div class="successfully none" id="successfully">
+      <div class="overlay"></div>
+      <div class="order_section successfully_section">
+        <div class="successfull_img">
+          <img src="{% static 'main/images/headset.png' %}" alt="headset" />
+        </div>
+        <h1>{% trans "Successfully send" %}</h1>
+        <p>{% trans "Operators will contact you shortly!" %}</p>
+        <button class="btn send" id="close-successfully">{% trans "Okay" %}</button>
+      </div>
+    </div>
+
+    <script src="{% static 'main/JS/nav.js' %}"></script>
+    <script src="{% static 'main/JS/main.js' %}"></script>
+  </body>
+</html>

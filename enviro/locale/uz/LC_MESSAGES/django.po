@@ -1,0 +1,240 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: .\enviro\urls.py:30
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-18 19:52-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: .\enviro\settings.py:125
+msgid "English"
+msgstr ""
+
+#: .\enviro\settings.py:126
+msgid "Russian"
+msgstr ""
+
+#: .\enviro\settings.py:127
+msgid "Uzbek"
+msgstr ""
+
+#: .\main\templates\main\Assets\building.html:12
+#: .\main\templates\main\Assets\buildingData.html:10
+#: .\main\templates\main\Assets\contacts.html:10
+#: .\main\templates\main\Assets\media.html:10
+#: .\main\templates\main\Assets\products.html:10
+#: .\main\templates\main\index.html:10
+msgid "Chemical"
+msgstr "Kimyoviy"
+
+#: .\main\templates\main\Assets\building.html:25
+#: .\main\templates\main\Assets\building.html:48
+#: .\main\templates\main\Assets\buildingData.html:23
+#: .\main\templates\main\Assets\buildingData.html:46
+#: .\main\templates\main\Assets\contacts.html:23
+#: .\main\templates\main\Assets\contacts.html:46
+#: .\main\templates\main\Assets\media.html:23
+#: .\main\templates\main\Assets\media.html:46
+#: .\main\templates\main\Assets\products.html:23
+#: .\main\templates\main\Assets\products.html:46
+#: .\main\templates\main\index.html:26 .\main\templates\main\index.html:49
+msgid "About us"
+msgstr "Biz haqimizda"
+
+#: .\main\templates\main\Assets\building.html:26
+#: .\main\templates\main\Assets\building.html:49
+#: .\main\templates\main\Assets\buildingData.html:24
+#: .\main\templates\main\Assets\buildingData.html:47
+#: .\main\templates\main\Assets\contacts.html:24
+#: .\main\templates\main\Assets\contacts.html:47
+#: .\main\templates\main\Assets\media.html:24
+#: .\main\templates\main\Assets\media.html:47
+#: .\main\templates\main\Assets\products.html:24
+#: .\main\templates\main\Assets\products.html:47
+#: .\main\templates\main\Assets\products.html:85
+#: .\main\templates\main\index.html:27 .\main\templates\main\index.html:50
+#: .\main\templates\main\index.html:99
+msgid "Products"
+msgstr "Mahsulotlar"
+
+#: .\main\templates\main\Assets\building.html:27
+#: .\main\templates\main\Assets\building.html:50
+#: .\main\templates\main\Assets\buildingData.html:25
+#: .\main\templates\main\Assets\buildingData.html:48
+#: .\main\templates\main\Assets\contacts.html:25
+#: .\main\templates\main\Assets\contacts.html:48
+#: .\main\templates\main\Assets\media.html:25
+#: .\main\templates\main\Assets\media.html:48
+#: .\main\templates\main\Assets\products.html:25
+#: .\main\templates\main\Assets\products.html:48
+#: .\main\templates\main\index.html:28 .\main\templates\main\index.html:51
+msgid "Media"
+msgstr "Media"
+
+#: .\main\templates\main\Assets\building.html:28
+#: .\main\templates\main\Assets\building.html:51
+#: .\main\templates\main\Assets\buildingData.html:26
+#: .\main\templates\main\Assets\buildingData.html:49
+#: .\main\templates\main\Assets\contacts.html:26
+#: .\main\templates\main\Assets\contacts.html:49
+#: .\main\templates\main\Assets\contacts.html:85
+#: .\main\templates\main\Assets\media.html:26
+#: .\main\templates\main\Assets\media.html:49
+#: .\main\templates\main\Assets\products.html:26
+#: .\main\templates\main\Assets\products.html:49
+#: .\main\templates\main\index.html:29 .\main\templates\main\index.html:52
+msgid "Contact us"
+msgstr "Biz bilan bog'laning"
+
+#: .\main\templates\main\Assets\building.html:140
+#: .\main\templates\main\Assets\building.html:156
+#: .\main\templates\main\Assets\buildingData.html:153
+msgid "View more"
+msgstr "Ko'proq ko'rish"
+
+#: .\main\templates\main\Assets\building.html:168
+#: .\main\templates\main\Assets\buildingData.html:168
+#: .\main\templates\main\Assets\contacts.html:201
+#: .\main\templates\main\Assets\media.html:124
+#: .\main\templates\main\Assets\products.html:111
+#: .\main\templates\main\index.html:342
+msgid "All rights reserved enviro chemicals"
+msgstr "Barcha huquqlar himoyalangan"
+
+#: .\main\templates\main\Assets\building.html:171
+#: .\main\templates\main\Assets\buildingData.html:171
+#: .\main\templates\main\Assets\contacts.html:116
+#: .\main\templates\main\Assets\contacts.html:204
+#: .\main\templates\main\Assets\media.html:127
+#: .\main\templates\main\Assets\products.html:114
+#: .\main\templates\main\index.html:345
+msgid "Biz ijtimoiy tarmoqlarda"
+msgstr ""
+
+#: .\main\templates\main\Assets\buildingData.html:87
+msgid "Back"
+msgstr "Ortga"
+
+#: .\main\templates\main\Assets\buildingData.html:129
+msgid "Similar products"
+msgstr "O'xshash mahsulotlar"
+
+#: .\main\templates\main\Assets\buildingData.html:204
+#: .\main\templates\main\index.html:376
+msgid "Order now"
+msgstr "Hoziroq buyurtma bering"
+
+#: .\main\templates\main\Assets\buildingData.html:208
+msgid "Ism"
+msgstr ""
+
+#: .\main\templates\main\Assets\buildingData.html:209
+#: .\main\templates\main\Assets\contacts.html:150
+#: .\main\templates\main\index.html:310
+msgid "Ismingizni kiriting!"
+msgstr ""
+
+#: .\main\templates\main\Assets\buildingData.html:210
+msgid "Telefon raqami"
+msgstr ""
+
+#: .\main\templates\main\Assets\buildingData.html:212
+msgid "Mail"
+msgstr ""
+
+#: .\main\templates\main\Assets\buildingData.html:213
+msgid "Email pochtangizni kiriting!"
+msgstr ""
+
+#: .\main\templates\main\Assets\buildingData.html:216
+#: .\main\templates\main\Assets\contacts.html:171
+#: .\main\templates\main\index.html:331
+msgid "Send"
+msgstr "Yuborish"
+
+#: .\main\templates\main\Assets\buildingData.html:227
+#: .\main\templates\main\Assets\contacts.html:180
+#: .\main\templates\main\index.html:390
+msgid "Successfully send"
+msgstr "Muvaffaqiyatlo jo'natildi"
+
+#: .\main\templates\main\Assets\buildingData.html:228
+#: .\main\templates\main\Assets\contacts.html:181
+#: .\main\templates\main\index.html:391
+msgid "Operators will contact you shortly!"
+msgstr "Tez orada operatorlar siz bilan bog'lanadi!"
+
+#: .\main\templates\main\Assets\buildingData.html:229
+#: .\main\templates\main\Assets\contacts.html:182
+#: .\main\templates\main\index.html:392
+msgid "Okay"
+msgstr ""
+
+#: .\main\templates\main\Assets\contacts.html:91
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+"Lorem Ipsum has been the industry's standard dummy text ever"
+msgstr ""
+
+#: .\main\templates\main\Assets\contacts.html:97
+#: .\main\templates\main\Assets\contacts.html:154
+#: .\main\templates\main\index.html:279 .\main\templates\main\index.html:314
+msgid "Phone number"
+msgstr "Telefon raqam"
+
+#: .\main\templates\main\Assets\contacts.html:104
+#: .\main\templates\main\index.html:286
+msgid "E-mail"
+msgstr ""
+
+#: .\main\templates\main\Assets\contacts.html:111
+#: .\main\templates\main\index.html:293
+msgid "Adress"
+msgstr "Manzil"
+
+#: .\main\templates\main\Assets\contacts.html:145
+#: .\main\templates\main\index.html:305
+msgid "Name"
+msgstr "Ism"
+
+#: .\main\templates\main\Assets\contacts.html:159
+#: .\main\templates\main\index.html:319
+msgid "Telefon raqamingizni kiriting"
+msgstr ""
+
+#: .\main\templates\main\Assets\contacts.html:163
+#: .\main\templates\main\index.html:323
+msgid "Email"
+msgstr ""
+
+#: .\main\templates\main\Assets\contacts.html:168
+#: .\main\templates\main\index.html:328
+msgid "Email pochtani kiriting"
+msgstr ""
+
+
+
+msgid "Clients"
+msgstr "Mijozlar"
+
+msgid "Why"
+msgstr "Nima uchun"
+
+msgid "us?"
+msgstr "biz?"
+
+
+msgid "Qurilish materiallari"
+msgstr ""

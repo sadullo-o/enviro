@@ -1,0 +1,157 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'main/CSS/style.css'  %}" />
+    <title>{% trans 'Chemical' %}</title>
+  </head>
+  <body>
+    <div class="overlay none" id="overlay"></div>
+
+    <!-- Nav -->
+    <nav class="flex justify_center">
+        <div class="container justify_center">
+          <div class="burMenu none" id="bur-menu">
+            <button class="close" onclick="closeNav()">
+              <img src="{% static 'main/images/close.png' %}' %}" alt="" />
+            </button>
+            <ul class="ul">
+              <li><a href="#about">{% trans "About us" %}</a></li>
+              <li><a href="{% url 'product' %}">{% trans "Products" %}</a></li>
+              <li><a href="{% url 'media' %}" target="_self">{% trans  "Media" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact us" %}</a></li>
+            </ul>
+          </div>
+          <div class="navbar">
+            <div class="navbarText">
+              <div class="logo">
+                <a href="{% url 'home' %}">
+                  <img src="{% static 'main/images/logo.png' %}" alt="logo" />
+                </a>
+              </div>
+              <div class="burgerMenu">
+                <img
+                  src="{% static 'main/images/icons/burger_menu.png' %}"
+                  alt="menu"
+                  class="burger_menu"
+                  onclick="openNav()"
+                />
+              </div>
+              <div class="menu">
+                <ul class="flex justify_center align_center">
+                  <li><a href="#about">{% trans "About us" %}</a></li>
+              <li><a href="{% url 'product' %}">{% trans "Products" %}</a></li>
+              <li><a href="{% url 'media' %}" target="_self">{% trans  "Media" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact us" %}</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="lang">
+              <img src="{% static 'main/images/icons/Globe.png' %}" alt="Globe" />
+              <div class="dropdown">
+                <div class="drop_btn flex align_center justify_center">
+                  {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+                  <button class="dropbtn_item" onclick="openDrop()">{{LANGUAGE_CODE}}</button>
+                  <img
+                    src="{% static 'main/images/icons/fi-rr-angle-small-down.png' %}"
+                    alt="Down"
+                    onclick="openDrop()"
+                  />
+                </div>
+                <div class="dropdown-content none" id="dropdown-content">
+                  {% for lang in languages %}
+
+              <a class="dropdown-item" href="/{{ lang.code }}/">
+                  {{ lang.name_local }}
+              </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Media -->
+    <section>
+      <div class="media" id="media">
+        <div class="all_media flex flex_column justify_center align_center">
+          <div class="container">
+            <h1>Media</h1>
+          </div>
+          <div class="container flex_column">
+            {% for item in oav %}
+            <div class="first_row">
+              <div class="media_left mediaImg_item">
+                <img src="{{item.image_1.url}}" alt="media" />
+                <div class="overlay_ImgText"></div>
+
+                <div class="img_text">
+                  <h1 class="imgText_title">{{item.title_1}}</h1>
+                  <p class="imgText_p">
+                    {{item.body_1}}
+                  </p>
+                </div>
+              </div>
+              <div class="media_right mediaImg_item">
+                <img src="{{item.image_2.url}}" alt="" />
+                <div class="overlay_ImgText"></div>
+
+                <div class="img_text">
+                  <h1 class="imgText_title">{{item.title_2}}</h1>
+                  <p class="imgText_p">
+                    {{item.body_2}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+  <footer>
+      <div class="footer flex justify_center align_center">
+        <h1>{% trans "All rights reserved enviro chemicals" %}</h1>
+        <div class="container justify_flexEnd">
+          <div class="socials flex align_center">
+            <h2>{% trans "Biz ijtimoiy tarmoqlarda" %}</h2>
+            <ul class="flex">
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/facebook.png' %}" alt="facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/instagramm.png' %}" alt="instagramm"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/telegram.png' %}" alt="telegram"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="{% static 'main/images/icons/telegram.png' %}" alt="yanatelegram"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'main/JS/nav.js' %}"></script>
+  </body>
+</html>
