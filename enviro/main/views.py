@@ -79,11 +79,12 @@ def buildingdata(request, group_id, pk):
     return render(request, 'main/Assets/buildingData.html', {'item': item, 'objs':objs, 'success': success})
 
 def contact(request):
-    success = False
+    success = ''
     sitecontact = SiteContac.objects.all()
     if request.method == 'POST':
         form = AddContact(request.POST)
         if form.is_valid():
             form.save()
-            success = True
-    return render(request, 'main/Assets/contacts.html', {'success': success, 'sitecontact':sitecontact})
+            success = 'True'
+    return render(request, 'main/Assets/contacts.html', {'success': success, 'sitecontact':sitecontact,
+                                                         'available_languages': ['en', 'ru', 'uz']})

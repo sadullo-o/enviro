@@ -168,7 +168,7 @@ msgstr "Yuborish"
 #: .\main\templates\main\Assets\contacts.html:180
 #: .\main\templates\main\index.html:390
 msgid "Successfully send"
-msgstr "Muvaffaqiyatlo jo'natildi"
+msgstr "Muvaffaqiyatli jo'natildi"
 
 #: .\main\templates\main\Assets\buildingData.html:228
 #: .\main\templates\main\Assets\contacts.html:181

@@ -6,6 +6,7 @@ class Contact(models.Model):
     number = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
 
+
     def __str__(self):
         return self.name
 
@@ -18,6 +19,7 @@ class Main(models.Model):
     title = models.CharField(max_length=200)
     body = models.CharField(max_length=200)
     link = models.CharField(max_length=200, default='#')
+    image = models.ImageField(default='')
     def __str__(self):
         return self.title
 
